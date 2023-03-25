@@ -1,0 +1,35 @@
+apiVersion: capsule.clastix.io/v1beta2
+kind: GlobalTenantResource
+metadata:
+  name: fossil-pull-secrets
+spec:
+  tenantSelector:
+    matchLabels:
+      energy: fossil
+  resyncPeriod: 60s
+  resources:
+    - namespacedItems:
+        - apiVersion: v1
+          kind: Secret
+          namespace: default
+          selector:
+            matchLabels:
+              tenant: team-a
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: whatever1
+  labels:
+    tenant: team-a
+stringData:
+  key: value
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: whatever2
+  labels:
+    tenant: team-a
+stringData:
+  key2: value2

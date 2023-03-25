@@ -1,0 +1,2 @@
+kubectl -n team-a-production run nginx --image=docker.io/nginx 
+kubectl -n team-a-production get pods

@@ -1,0 +1,10 @@
+apiVersion: v2
+appVersion: 1.0.0
+description: Helm chart
+name: capsule-installation
+version: 1.0.0
+
+dependencies:
+  - name: capsule
+    version: "0.3.0"
+    repository: "https://clastix.github.io/charts"
